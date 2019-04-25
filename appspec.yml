@@ -18,23 +18,23 @@ permissions:
     mode: 640
     type:
       - file
-# hooks:
-#   ApplicationStop:
-#     - location: .aws/application-stop.sh
-#       timeout: 30
-#       runas: root
-#   BeforeInstall:
-#     - location: .aws/before-install.sh
-#       timeout: 300
-#       runas: root
-#   AfterInstall:
-#     - location: .aws/after-install-www-data.sh
-#       timeout: 300
-#       runas: www-data
-#     - location: .aws/after-install-root.sh
-#       timeout: 30
-#       runas: root
-#   ApplicationStart:
-#     - location: .aws/application-start.sh
-#       timeout: 30
-#       runas: root
+hooks:
+  ApplicationStop:
+    - location: .aws/application-stop.sh
+      timeout: 30
+      runas: root
+  BeforeInstall:
+    - location: .aws/before-install.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: .aws/after-install-www-data.sh
+      timeout: 300
+      runas: www-data
+    - location: .aws/after-install-root.sh
+      timeout: 30
+      runas: root
+  ApplicationStart:
+    - location: .aws/application-start.sh
+      timeout: 30
+      runas: root
